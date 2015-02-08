@@ -47,7 +47,8 @@
   [dateComponents setMinute:min];
   [dateComponents setSecond:s];
   
-  NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+  NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+
   NSDate *date = [calendar dateFromComponents:dateComponents];
   
   return date;
@@ -68,8 +69,8 @@
   uint32_t seconds;
   
   if(date) {
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSUInteger calendarComponents = (NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit);
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSUInteger calendarComponents = (NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond);
     NSDateComponents *dateComponents = [calendar components:calendarComponents fromDate:date];
     
     year = (uint32_t)[dateComponents year];
