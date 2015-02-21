@@ -25,7 +25,7 @@
 
 #import <Foundation/Foundation.h>
 #import "KPKTypes.h"
-#import "DDXMLElement.h"
+#import <KissXML/DDXMLElement.h>
 
 #pragma mark Writing Helper
 /**
